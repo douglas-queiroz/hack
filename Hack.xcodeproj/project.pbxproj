@@ -12,6 +12,7 @@
 		CBEA0C321D18C65E00E29C34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBEA0C301D18C65E00E29C34 /* Main.storyboard */; };
 		CBEA0C341D18C65E00E29C34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEA0C331D18C65E00E29C34 /* Assets.xcassets */; };
 		CBEA0C371D18C65E00E29C34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBEA0C351D18C65E00E29C34 /* LaunchScreen.storyboard */; };
+		CBEA0C3F1D18C82B00E29C34 /* as quatro estações (vivaldi).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CBEA0C3E1D18C82B00E29C34 /* as quatro estações (vivaldi).mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CBEA0C331D18C65E00E29C34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBEA0C361D18C65E00E29C34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBEA0C381D18C65E00E29C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBEA0C3E1D18C82B00E29C34 /* as quatro estações (vivaldi).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "as quatro estações (vivaldi).mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		CBEA0C2B1D18C65E00E29C34 /* Hack */ = {
 			isa = PBXGroup;
 			children = (
+				CBEA0C3E1D18C82B00E29C34 /* as quatro estações (vivaldi).mp3 */,
 				CBEA0C2C1D18C65E00E29C34 /* AppDelegate.swift */,
 				CBEA0C2E1D18C65E00E29C34 /* ViewController.swift */,
 				CBEA0C301D18C65E00E29C34 /* Main.storyboard */,
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBEA0C371D18C65E00E29C34 /* LaunchScreen.storyboard in Resources */,
+				CBEA0C3F1D18C82B00E29C34 /* as quatro estações (vivaldi).mp3 in Resources */,
 				CBEA0C341D18C65E00E29C34 /* Assets.xcassets in Resources */,
 				CBEA0C321D18C65E00E29C34 /* Main.storyboard in Resources */,
 			);
