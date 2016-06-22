@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB5FEBEA1D1A21A900495FFF /* GpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FEBE91D1A21A900495FFF /* GpsViewController.swift */; };
+		CB5FEBEC1D1A28E300495FFF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5FEBEB1D1A28E300495FFF /* MapKit.framework */; };
 		CBEA0C2D1D18C65E00E29C34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA0C2C1D18C65E00E29C34 /* AppDelegate.swift */; };
 		CBEA0C2F1D18C65E00E29C34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA0C2E1D18C65E00E29C34 /* ViewController.swift */; };
 		CBEA0C321D18C65E00E29C34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBEA0C301D18C65E00E29C34 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB5FEBE91D1A21A900495FFF /* GpsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpsViewController.swift; sourceTree = "<group>"; };
+		CB5FEBEB1D1A28E300495FFF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CBEA0C291D18C65E00E29C34 /* Hack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEA0C2C1D18C65E00E29C34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBEA0C2E1D18C65E00E29C34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,15 +35,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB5FEBEC1D1A28E300495FFF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB5FEBE71D1A1F1D00495FFF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CBEA0C3E1D18C82B00E29C34 /* 4estacoes.mp3 */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		CB5FEBE81D1A1F2900495FFF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CBEA0C2E1D18C65E00E29C34 /* ViewController.swift */,
+				CB5FEBE91D1A21A900495FFF /* GpsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		CBEA0C201D18C65E00E29C34 = {
 			isa = PBXGroup;
 			children = (
+				CB5FEBEB1D1A28E300495FFF /* MapKit.framework */,
 				CBEA0C2B1D18C65E00E29C34 /* Hack */,
 				CBEA0C2A1D18C65E00E29C34 /* Products */,
 			);
@@ -56,9 +79,9 @@
 		CBEA0C2B1D18C65E00E29C34 /* Hack */ = {
 			isa = PBXGroup;
 			children = (
-				CBEA0C3E1D18C82B00E29C34 /* 4estacoes.mp3 */,
+				CB5FEBE71D1A1F1D00495FFF /* Resource */,
+				CB5FEBE81D1A1F2900495FFF /* Controllers */,
 				CBEA0C2C1D18C65E00E29C34 /* AppDelegate.swift */,
-				CBEA0C2E1D18C65E00E29C34 /* ViewController.swift */,
 				CBEA0C301D18C65E00E29C34 /* Main.storyboard */,
 				CBEA0C331D18C65E00E29C34 /* Assets.xcassets */,
 				CBEA0C351D18C65E00E29C34 /* LaunchScreen.storyboard */,
@@ -100,6 +123,11 @@
 					CBEA0C281D18C65E00E29C34 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6TRJWLUZCF;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -140,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB5FEBEA1D1A21A900495FFF /* GpsViewController.swift in Sources */,
 				CBEA0C2F1D18C65E00E29C34 /* ViewController.swift in Sources */,
 				CBEA0C2D1D18C65E00E29C34 /* AppDelegate.swift in Sources */,
 			);
@@ -297,6 +326,7 @@
 				CBEA0C3D1D18C65E00E29C34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -41,11 +42,20 @@
                                     <segue destination="nfm-79-khg" kind="show" id="EzA-kJ-xb2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-o8-jiV">
+                                <rect key="frame" x="108" y="205" width="105" height="30"/>
+                                <state key="normal" title="Geolocalização"/>
+                                <connections>
+                                    <segue destination="Dau-o8-pvk" kind="show" id="gOP-NH-OD8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Hc6-o8-jiV" firstAttribute="centerX" secondItem="XfN-xr-Tyr" secondAttribute="centerX" id="Rsg-tx-GEL"/>
                             <constraint firstItem="XfN-xr-Tyr" firstAttribute="centerX" secondItem="dcU-8Z-t9o" secondAttribute="centerX" id="e7h-Fk-yzq"/>
                             <constraint firstItem="XfN-xr-Tyr" firstAttribute="top" secondItem="UAw-rz-ckG" secondAttribute="bottom" constant="103" id="hxh-pO-0kL"/>
+                            <constraint firstItem="Hc6-o8-jiV" firstAttribute="top" secondItem="XfN-xr-Tyr" secondAttribute="bottom" constant="8" id="uKM-Ho-6jG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="chT-jb-DiO"/>
@@ -98,6 +108,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qow-wc-Fn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="661" y="-350"/>
+        </scene>
+        <!--Gps View Controller-->
+        <scene sceneID="HmU-CT-YYb">
+            <objects>
+                <viewController id="Dau-o8-pvk" customClass="GpsViewController" customModule="Hack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gPt-Id-dbA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vnu-Qe-UV0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jOh-sp-bhR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eB1-TT-B6w">
+                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Dau-o8-pvk" id="BNt-lf-qI3"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="eB1-TT-B6w" secondAttribute="trailing" constant="-20" id="5tb-hv-pGX"/>
+                            <constraint firstItem="eB1-TT-B6w" firstAttribute="leading" secondItem="jOh-sp-bhR" secondAttribute="leadingMargin" constant="-20" id="sce-gc-ErB"/>
+                            <constraint firstItem="Vnu-Qe-UV0" firstAttribute="top" secondItem="eB1-TT-B6w" secondAttribute="bottom" id="ugq-wu-od8"/>
+                            <constraint firstItem="eB1-TT-B6w" firstAttribute="top" secondItem="gPt-Id-dbA" secondAttribute="bottom" id="viB-li-8aQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="eB1-TT-B6w" id="3mw-qY-Eds"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UyV-jT-HOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="661" y="408"/>
         </scene>
     </scenes>
 </document>

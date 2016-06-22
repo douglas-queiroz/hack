@@ -19,6 +19,23 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        // 
+        let commandCenter = MPRemoteCommandCenter.sharedCommandCenter()
+        commandCenter.playCommand.enabled = true
+        commandCenter.playCommand.addTarget(self, action: #selector(play))
+        commandCenter.pauseCommand.addTarget(self, action: #selector(pause))
     }
     
     func playAudio()
@@ -27,7 +44,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         do
         {
             audioPlayer = try AVAudioPlayer(contentsOfURL: soundURL)
-            audioPlayer!.delegate = self
             if (audioPlayer!.prepareToPlay())
             {
                 audioPlayer!.play()
@@ -38,18 +54,15 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func btnPlayAction(sender: AnyObject) {
-        UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
-        let commandCenter = MPRemoteCommandCenter.sharedCommandCenter()
-        commandCenter.playCommand.enabled = true
-        commandCenter.stopCommand.enabled = true
-        commandCenter.playCommand.addTarget(self, action: #selector(play))
-        commandCenter.stopCommand.addTarget(self, action: #selector(stop))
-        
         self.play()
     }
     
     @IBAction func btnStopAction(sender: AnyObject) {
         self.stop()
+    }
+    
+    func pause() {
+        audioPlayer.pause()
     }
     
     func play() {
